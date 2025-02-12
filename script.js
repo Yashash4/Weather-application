@@ -29,7 +29,6 @@ const currentDesc = document.getElementById("weather-c");
 const currentHumid = document.getElementById("humid");
 const currentWind = document.getElementById("wind-speed");
 const currentMinMax = document.getElementById("min-max");
-// This element (with id "temp-icon") must be present in your HTML before the temperature text.
 const currentIcon = document.getElementById("temp-icon");
 const timeEl = document.getElementById("time");
 const dateEl = document.getElementById("date");
@@ -142,8 +141,8 @@ searchBtn.addEventListener("click", () => {
   }
 });
 
-fetchCurrentWeather("London");
-fetchHourlyForecast("London");
-fetchFutureForecast("London");
+fetchCurrentWeather("Bengaluru");
+fetchHourlyForecast("Bengaluru");
+fetchFutureForecast("Bengaluru");
 updateTime();
 setInterval(updateTime, 10000);
