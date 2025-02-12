@@ -3,25 +3,31 @@ const currentWeatherURL = "https://api.openweathermap.org/data/2.5/weather";
 const forecastURL = "https://api.openweathermap.org/data/2.5/forecast";
 
 const iconMapping = {
-  "01d": "https://img.icons8.com/fluency/48/ffffff/sun.png",
-  "01n": "https://img.icons8.com/fluency/48/ffffff/moon.png",
-  "02d": "https://img.icons8.com/fluency/48/ffffff/partly-cloudy-day.png",
-  "02n": "https://img.icons8.com/fluency/48/ffffff/partly-cloudy-night.png",
-  "03d": "https://img.icons8.com/fluency/48/ffffff/cloud.png",
-  "03n": "https://img.icons8.com/fluency/48/ffffff/cloud.png",
-  "04d": "https://img.icons8.com/fluency/48/ffffff/cloud.png",
-  "04n": "https://img.icons8.com/fluency/48/ffffff/cloud.png",
-  "09d": "https://img.icons8.com/fluency/48/ffffff/rain.png",
-  "09n": "https://img.icons8.com/fluency/48/ffffff/rain.png",
-  "10d": "https://img.icons8.com/fluency/48/ffffff/rain.png",
-  "10n": "https://img.icons8.com/fluency/48/ffffff/rain.png",
-  "11d": "https://img.icons8.com/fluency/48/ffffff/storm.png",
-  "11n": "https://img.icons8.com/fluency/48/ffffff/storm.png",
-  "13d": "https://img.icons8.com/fluency/48/ffffff/snow.png",
-  "13n": "https://img.icons8.com/fluency/48/ffffff/snow.png",
-  "50d": "https://img.icons8.com/fluency/48/ffffff/fog.png",
-  "50n": "https://img.icons8.com/fluency/48/ffffff/fog.png"
-};
+    "01d": "https://img.icons8.com/metro/52/ffffff/sun.png",          // Clear sky (day)
+    "01n": "https://img.icons8.com/metro/52/ffffff/full-moon.png",     // Clear sky (night)
+    "02d": "https://img.icons8.com/metro/52/ffffff/partly-cloudy-day.png", // Few clouds (day)
+    "02n": "https://img.icons8.com/metro/52/ffffff/partly-cloudy-night.png", // Few clouds (night)
+    "03d": "https://img.icons8.com/metro/52/ffffff/cloud.png",         // Scattered clouds
+    "03n": "https://img.icons8.com/metro/52/ffffff/cloud.png",
+    "04d": "https://img.icons8.com/metro/52/ffffff/clouds.png",        // Broken clouds
+    "04n": "https://img.icons8.com/metro/52/ffffff/clouds.png",
+    "09d": "https://img.icons8.com/metro/52/ffffff/rain.png",          // Shower rain
+    "09n": "https://img.icons8.com/metro/52/ffffff/rain.png",
+    "10d": "https://img.icons8.com/metro/52/ffffff/rain.png",          // Rain
+    "10n": "https://img.icons8.com/metro/52/ffffff/rain.png",
+    "11d": "https://img.icons8.com/metro/52/ffffff/storm.png",         // Thunderstorm
+    "11n": "https://img.icons8.com/metro/52/ffffff/storm.png",
+    "13d": "https://img.icons8.com/metro/52/ffffff/snow.png",          // Snow
+    "13n": "https://img.icons8.com/metro/52/ffffff/snow.png",
+    "50d": "https://img.icons8.com/metro/52/ffffff/fog.png",           // Mist/Fog
+    "50n": "https://img.icons8.com/metro/52/ffffff/fog.png"
+  };
+  
+  
+  
+  
+  
+  
 
 const currentCity = document.getElementById("city");
 const currentTemp = document.getElementById("temperature-c");
