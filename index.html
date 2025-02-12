@@ -12,38 +12,33 @@
       <input type="text" id="cityInput" placeholder="Enter city name">
       <button id="searchBtn">Search</button>
     </div>
-    <div class="upper">
-      <div class="datetime">
-        <div class="time" id="time">--:-- --</div>
-        <div class="date" id="date">Loading...</div>
+    <div class="weather-box">
+      <div class="header">
+        <div class="city-info" id="city">--, --</div>
+        <div class="time-info" id="time">--:-- --</div>
+        <div class="title">Real-time Weather Conditions</div>
       </div>
-      <div class="place">
-        <div class="city" id="city">-- Enter your city name --</div>
-      </div>
-      <div>Real-time Weather Conditions</div>
-    </div>
-    <div class="current-weather">
       <div class="weather-main">
-        <div class="temp-container">
-          <div class="temperature" id="temperature-c">--°C</div>
-          <div class="weather" id="weather-c">--</div>
+        <div class="left">
+          <div class="temp-group">
+            <img id="temp-icon" src="" alt="Weather Icon" class="temp-icon">
+            <div class="temperature" id="temperature-c">--°C</div>
+          </div>
+          <div class="condition" id="weather-c">--</div>
         </div>
-        <div class="icon-container">
-          <img src="" alt="weather icon" class="w-icon" id="weather-icon">
-        </div>
-      </div>
-      <div class="weather-details">
-        <div class="detail">
-          <img src="https://img.icons8.com/ios-filled/50/ffffff/humidity.png" alt="Humidity">
-          <span id="humid">--%</span>
-        </div>
-        <div class="detail">
-          <img src="https://img.icons8.com/ios-filled/50/ffffff/wind.png" alt="Wind Speed">
-          <span id="wind-speed">-- km/h</span>
-        </div>
-        <div class="detail">
-          <img src="https://img.icons8.com/ios-filled/50/ffffff/thermometer.png" alt="Min/Max Temp">
-          <span id="min-max">--°C / --°C</span>
+        <div class="right">
+          <div class="info-line">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/humidity.png" alt="Humidity" class="info-icon">
+            <span id="humid">Humidity: --%</span>
+          </div>
+          <div class="info-line">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/wind.png" alt="Wind Speed" class="info-icon">
+            <span id="wind-speed">Wind: -- km/h</span>
+          </div>
+          <div class="info-line">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/thermometer.png" alt="Min Temp" class="info-icon">
+            <span id="min-max">Min/Max: --°C / --°C</span>
+          </div>
         </div>
       </div>
     </div>
@@ -150,7 +145,7 @@
   <div class="future-forecast">
     <div class="weather-forecast" id="weather-forecast">
       <div class="weather-forecast-item" id="day1">
-        <img src="" alt="weather icon" class="w-icon" />
+        <img src="" alt="weather icon" class="w-icon">
         <div class="other">
           <div class="day" id="day1-day">Loading...</div>
           <div class="temp" id="day1-night">Night - --°C</div>
@@ -158,7 +153,7 @@
         </div>
       </div>
       <div class="weather-forecast-item" id="day2">
-        <img src="" alt="weather icon" class="w-icon" />
+        <img src="" alt="weather icon" class="w-icon">
         <div class="other">
           <div class="day" id="day2-day">Loading...</div>
           <div class="temp" id="day2-night">Night - --°C</div>
@@ -166,7 +161,7 @@
         </div>
       </div>
       <div class="weather-forecast-item" id="day3">
-        <img src="" alt="weather icon" class="w-icon" />
+        <img src="" alt="weather icon" class="w-icon">
         <div class="other">
           <div class="day" id="day3-day">Loading...</div>
           <div class="temp" id="day3-night">Night - --°C</div>
@@ -174,7 +169,7 @@
         </div>
       </div>
       <div class="weather-forecast-item" id="day4">
-        <img src="" alt="weather icon" class="w-icon" />
+        <img src="" alt="weather icon" class="w-icon">
         <div class="other">
           <div class="day" id="day4-day">Loading...</div>
           <div class="temp" id="day4-night">Night - --°C</div>
@@ -182,7 +177,7 @@
         </div>
       </div>
       <div class="weather-forecast-item" id="day5">
-        <img src="" alt="weather icon" class="w-icon" />
+        <img src="" alt="weather icon" class="w-icon">
         <div class="other">
           <div class="day" id="day5-day">Loading...</div>
           <div class="temp" id="day5-night">Night - --°C</div>

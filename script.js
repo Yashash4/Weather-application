@@ -1,6 +1,7 @@
 const API_KEY = "2a4bd9b6d92a6c4214387203a52eec07";
 const currentWeatherURL = "https://api.openweathermap.org/data/2.5/weather";
 const forecastURL = "https://api.openweathermap.org/data/2.5/forecast";
+
 const iconMapping = {
   "01d": "https://img.icons8.com/fluency/48/ffffff/sun.png",
   "01n": "https://img.icons8.com/fluency/48/ffffff/moon.png",
@@ -21,17 +22,20 @@ const iconMapping = {
   "50d": "https://img.icons8.com/fluency/48/ffffff/fog.png",
   "50n": "https://img.icons8.com/fluency/48/ffffff/fog.png"
 };
+
 const currentCity = document.getElementById("city");
 const currentTemp = document.getElementById("temperature-c");
 const currentDesc = document.getElementById("weather-c");
 const currentHumid = document.getElementById("humid");
 const currentWind = document.getElementById("wind-speed");
 const currentMinMax = document.getElementById("min-max");
-const currentIcon = document.getElementById("weather-icon");
+// This element (with id "temp-icon") must be present in your HTML before the temperature text.
+const currentIcon = document.getElementById("temp-icon");
 const timeEl = document.getElementById("time");
 const dateEl = document.getElementById("date");
 const searchBtn = document.getElementById("searchBtn");
 const cityInput = document.getElementById("cityInput");
+
 async function fetchCurrentWeather(city) {
   try {
     const res = await fetch(`${currentWeatherURL}?q=${city}&appid=${API_KEY}&units=metric`);
@@ -43,9 +47,9 @@ async function fetchCurrentWeather(city) {
     currentCity.textContent = `${data.name}, ${data.sys.country}`;
     currentTemp.textContent = `${data.main.temp}°C`;
     currentDesc.textContent = data.weather[0].description;
-    currentHumid.textContent = `${data.main.humidity}%`;
-    currentWind.textContent = `${data.wind.speed} km/h`;
-    currentMinMax.textContent = `${data.main.temp_min}°C / ${data.main.temp_max}°C`;
+    currentHumid.textContent = `Humidity: ${data.main.humidity}%`;
+    currentWind.textContent = `Wind: ${data.wind.speed} km/h`;
+    currentMinMax.textContent = `Min/Max: ${data.main.temp_min}°C / ${data.main.temp_max}°C`;
     const iconCode = data.weather[0].icon;
     const iconUrl = iconMapping[iconCode] || `https://openweathermap.org/img/wn/${iconCode}.png`;
     currentIcon.src = iconUrl;
@@ -53,6 +57,7 @@ async function fetchCurrentWeather(city) {
     console.error("Error fetching current weather:", error);
   }
 }
+
 async function fetchHourlyForecast(city) {
   try {
     const res = await fetch(`${forecastURL}?q=${city}&appid=${API_KEY}&units=metric`);
@@ -65,7 +70,12 @@ async function fetchHourlyForecast(city) {
       const hourData = data.list[i];
       if (!hourData) break;
       const dt = new Date(hourData.dt * 1000);
-      const timeText = dt.toLocaleString("en-US", { weekday: "short", hour: "2-digit", minute: "2-digit", hour12: true });
+      const timeText = dt.toLocaleString("en-US", {
+        weekday: "short",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true
+      });
       document.getElementById(`${i + 1}hrs`).textContent = timeText;
       document.getElementById(`${i + 1}hrst`).textContent = `${hourData.main.temp}°C`;
       document.getElementById(`${i + 1}hrsh`).textContent = `${hourData.main.humidity}%`;
@@ -78,6 +88,7 @@ async function fetchHourlyForecast(city) {
     console.error("Error fetching hourly forecast:", error);
   }
 }
+
 async function fetchFutureForecast(city) {
   try {
     const res = await fetch(`${forecastURL}?q=${city}&appid=${API_KEY}&units=metric`);
@@ -108,6 +119,7 @@ async function fetchFutureForecast(city) {
     console.error("Error fetching future forecast:", error);
   }
 }
+
 function updateTime() {
   const now = new Date();
   let hrs = now.getHours();
@@ -117,8 +129,8 @@ function updateTime() {
   mins = mins < 10 ? "0" + mins : mins;
   timeEl.textContent = `${hrs}:${mins} ${ampm}`;
   const options = { weekday: "long", month: "long", day: "numeric", year: "numeric" };
-  dateEl.textContent = now.toLocaleDateString("en-US", options);
 }
+
 searchBtn.addEventListener("click", () => {
   const city = cityInput.value.trim();
   if (city) {
@@ -129,6 +141,7 @@ searchBtn.addEventListener("click", () => {
     alert("Please enter a city name!");
   }
 });
+
 fetchCurrentWeather("London");
 fetchHourlyForecast("London");
 fetchFutureForecast("London");
