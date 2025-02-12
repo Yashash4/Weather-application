@@ -213,7 +213,7 @@ body {
     padding: 10px;
   }
   .weather-hourly table {
-    min-width: 100%;
+    max-width: 100%;
   }
   .weather-hourly th,
   .weather-hourly td {
