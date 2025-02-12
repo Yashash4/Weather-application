@@ -1,13 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
-    <script src="script.js"></script>
+  <div class="container">
+
+    <div class="search-container">
+      <input type="text" id="cityInput" placeholder="Enter city name" />
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <div class="upper">
+      <div class="datetime">
+        <div class="time" id="time">--:-- --</div>
+        <div class="date" id="date">Loading...</div>
+      </div>
+
+      <div class="place">
+        <div class="city" id="city">--</div>
+        <div class="state" id="state">Enter your city name</div>
+        <div class="country" id="country">--</div>
+      </div>
+      <div>Real-time Weather Conditions</div>
+    </div>
+
+    <div class="current-weather">
+      <div class="celcius">
+        <div>
+          <div class="temperature" id="temperature-c">--°C</div>
+          <div class="weather" id="weather-c">--</div>
+        </div>
+      </div>
+
+      <div class="fahrenheit">
+        <div>
+          <div class="temperature" id="temperature-f">--°F</div>
+          <div class="weather" id="weather">--</div>
+        </div>
+      </div>
+
+      <div class="humidity">
+        <div>
+          <img src="" alt="weather icon" class="w-icon" />
+        </div>
+        <div>
+          <div class="type" id="type">--</div>
+          <div class="humid" id="humid">--%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="weather-hourly">
+    <table>
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Condition</th>
+                <th>Temp</th>
+                <th>Humidity</th>
+                <th>UV</th>
+                <th>Wind Speed</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="1hrs">-</td>
+                <td id="1hrsi"><img src="sunny_icon.png" alt="Sunny"> Sunny</td>
+                <td id="1hrst">31 °C</td>
+                <td id="1hrsh">10%</td>
+                <td id="1hrsw">16.9 kmph</td>
+            </tr>
+            <tr>
+                <td id="2hrs">-</td>
+                <td id="2hrsi"><img src="sunny_icon.png" alt="Sunny"> Sunny</td>
+                <td id="2hrst">31 °C</td>
+                <td id="2hrsh">10%</td>
+                <td id="2hrsw">16.9 kmph</td>
+            </tr>
+            <tr>
+                <td id="3hrs">-</td>
+                <td id="3hrsi"><img src="sunny_icon.png" alt="Sunny"> Sunny</td>
+                <td id="3hrst">31 °C</td>
+                <td id="3hrsh">10%</td>
+                <td id="3hrsw">16.9 kmph</td>
+            </tr>
+            <tr>
+                <td id="4hrs">-</td>
+                <td id="4hrsi"><img src="sunny_icon.png" alt="Sunny"> Sunny</td>
+                <td id="4hrst">31 °C</td>
+                <td id="4hrsh">10%</td>
+                <td id="4hrsw">16.9 kmph</td>
+            </tr>
+            <tr>
+              <td id="5hrs">-</td>
+              <td id="5hrsi"><img src="sunny_icon.png" alt="Sunny"> Sunny</td>
+              <td id="5hrst">31 °C</td>
+              <td id="5hrsh">10%</td>
+              <td id="5hrsw">16.9 kmph</td>
+            </tr>
+            <tr>
+                <td id="6hrs">-</td>
+                <td id="6hrsi"><img src="sunny_icon.png" alt="Sunny"> Sunny</td>
+                <td id="6hrst">31 °C</td>
+                <td id="6hrsh">10%</td>
+                <td id="6hrsw">16.9 kmph</td>
+            </tr>
+            <tr>
+                <td id="7hrs">-</td>
+                <td id="7hrsi"><img src="sunny_icon.png" alt="Sunny"> Sunny</td>
+                <td id="7hrst">31 °C</td>
+                <td id="7hrsh">10%</td>
+                <td id="7hrsw">16.9 kmph</td>
+            </tr>
+            <tr>
+                <td id="8hrs">-</td>
+                <td id="8hrsi"><img src="sunny_icon.png" alt="Sunny"> Sunny</td>
+                <td id="8hrst">31 °C</td>
+                <td id="8hrsh">10%</td>
+                <td id="8hrsw">16.9 kmph</td>
+            </tr>
+            <tr>
+                <td id="9hrs">-</td>
+                <td id="9hrsi"><img src="sunny_icon.png" alt="Sunny"> Sunny</td>
+                <td id="9hrst">31 °C</td>
+                <td id="9hrsh">10%</td>
+                <td id="9hrsw">16.9 kmph</td>
+            </tr>
+            <tr>
+                <td id="10hrs">-</td>
+                <td id="10hrsi"><img src="sunny_icon.png" alt="Sunny"> Sunny</td>
+                <td id="10hrst">31 °C</td>
+                <td id="10hrsh">10%</td>
+                <td id="10hrsw">16.9 kmph</td>
+            </tr>
+            <tr>
+                <td id="11hrs">-</td>
+                <td id="11hrsi"><img src="sunny_icon.png" alt="Sunny"> Sunny</td>
+                <td id="11hrst">31 °C</td>
+                <td id="11hrsh">10%</td>
+                <td id="11hrsw">16.9 kmph</td>
+            </tr>
+            <tr>
+                <td id="12hrs">-</td>
+                <td id="12hrsi"><img src="sunny_icon.png" alt="Sunny"> Sunny</td>
+                <td id="12hrst">31 °C</td>
+                <td id="12hrsh">10%</td>
+                <td id="12hrsw">16.9 kmph</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+  <div class="future-forecast">
+    <div class="today" id="current-temp">
+      <img src="" alt="weather icon" class="w-icon" />
+      <div class="other">
+        <div class="day" id="today-day">Loading...</div>
+        <div class="temp" id="today-night">Night - --°C</div>
+        <div class="temp" id="today-day-temp">Day - --°C</div>
+      </div>
+    </div>
+
+    <div class="weather-forecast" id="weather-forecast">
+      <div class="weather-forecast-item" id="day1">
+        <img src="" alt="weather icon" class="w-icon" />
+        <div class="other">
+          <div class="day" id="day1-day">Loading...</div>
+          <div class="temp" id="day1-night">Night - --°C</div>
+          <div class="temp" id="day1-day-temp">Day - --°C</div>
+        </div>
+      </div>
+      <div class="weather-forecast-item" id="day2">
+        <img src="" alt="weather icon" class="w-icon" />
+        <div class="other">
+          <div class="day" id="day2-day">Loading...</div>
+          <div class="temp" id="day2-night">Night - --°C</div>
+          <div class="temp" id="day2-day-temp">Day - --°C</div>
+        </div>
+      </div>
+      <div class="weather-forecast-item" id="day3">
+        <img src="" alt="weather icon" class="w-icon" />
+        <div class="other">
+          <div class="day" id="day3-day">Loading...</div>
+          <div class="temp" id="day3-night">Night - --°C</div>
+          <div class="temp" id="day3-day-temp">Day - --°C</div>
+        </div>
+      </div>
+      <div class="weather-forecast-item" id="day4">
+        <img src="" alt="weather icon" class="w-icon" />
+        <div class="other">
+          <div class="day" id="day4-day">Loading...</div>
+          <div class="temp" id="day4-night">Night - --°C</div>
+          <div class="temp" id="day4-day-temp">Day - --°C</div>
+        </div>
+      </div>
+      <div class="weather-forecast-item" id="day5">
+        <img src="" alt="weather icon" class="w-icon" />
+        <div class="other">
+          <div class="day" id="day5-day">Loading...</div>
+          <div class="temp" id="day5-night">Night - --°C</div>
+          <div class="temp" id="day5-day-temp">Day - --°C</div>
+        </div>
+      </div>
+      <div class="weather-forecast-item" id="day6">
+        <img src="" alt="weather icon" class="w-icon" />
+        <div class="other">
+          <div class="day" id="day6-day">Loading...</div>
+          <div class="temp" id="day6-night">Night - --°C</div>
+          <div class="temp" id="day6-day-temp">Day - --°C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
