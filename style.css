@@ -101,7 +101,6 @@ body {
   width: 100%;
 }
 
-/* Left Section: Weather Icon & Temperature Side by Side */
 .left {
   display: flex;
   flex-direction: column;
@@ -135,7 +134,6 @@ body {
   display: inline-block;
 }
 
-/* Right Section: Additional Info Styled as Cards */
 .right {
   flex: 0 0 50%;
   padding-left: 20px;
@@ -162,7 +160,6 @@ body {
   color: #fff;
 }
 
-/* Hourly Forecast */
 .weather-hourly {
   overflow-x: auto;
   margin-top: 20px;
@@ -172,12 +169,10 @@ body {
   color: white;
 }
 
-/* Hide scrollbar for Webkit browsers */
 .weather-hourly::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for Firefox */
 .weather-hourly {
   scrollbar-width: none;
 }
@@ -234,7 +229,6 @@ body {
   color: white;
 }
 
-/* Hide scrollbar for future forecast */
 .future-forecast::-webkit-scrollbar {
   display: none;
 }
@@ -272,7 +266,6 @@ body {
   font-size: 14px;
 }
 
-/* Responsive Adjustments for Main Weather */
 @media only screen and (max-width: 600px) {
   .weather-main {
     flex-direction: column;
@@ -291,7 +284,6 @@ body {
   }
 }
 
-/* Responsive Adjustments for Future Forecast on smaller screens */
 @media only screen and (max-width: 730px) {
   .container {
     width: 100%;
