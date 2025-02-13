@@ -3,30 +3,26 @@ const currentWeatherURL = "https://api.openweathermap.org/data/2.5/weather";
 const forecastURL = "https://api.openweathermap.org/data/2.5/forecast";
 
 const iconMapping = {
-    "01d": "https://img.icons8.com/metro/52/ffffff/sun.png",          // Clear sky (day)
-    "01n": "https://img.icons8.com/metro/52/ffffff/full-moon.png",     // Clear sky (night)
-    "02d": "https://img.icons8.com/metro/52/ffffff/partly-cloudy-day.png", // Few clouds (day)
-    "02n": "https://img.icons8.com/metro/52/ffffff/partly-cloudy-night.png", // Few clouds (night)
-    "03d": "https://img.icons8.com/metro/52/ffffff/cloud.png",         // Scattered clouds
-    "03n": "https://img.icons8.com/metro/52/ffffff/cloud.png",
-    "04d": "https://img.icons8.com/metro/52/ffffff/clouds.png",        // Broken clouds
-    "04n": "https://img.icons8.com/metro/52/ffffff/clouds.png",
-    "09d": "https://img.icons8.com/metro/52/ffffff/rain.png",          // Shower rain
-    "09n": "https://img.icons8.com/metro/52/ffffff/rain.png",
-    "10d": "https://img.icons8.com/metro/52/ffffff/rain.png",          // Rain
-    "10n": "https://img.icons8.com/metro/52/ffffff/rain.png",
-    "11d": "https://img.icons8.com/metro/52/ffffff/storm.png",         // Thunderstorm
-    "11n": "https://img.icons8.com/metro/52/ffffff/storm.png",
-    "13d": "https://img.icons8.com/metro/52/ffffff/snow.png",          // Snow
-    "13n": "https://img.icons8.com/metro/52/ffffff/snow.png",
-    "50d": "https://img.icons8.com/metro/52/ffffff/fog.png",           // Mist/Fog
-    "50n": "https://img.icons8.com/metro/52/ffffff/fog.png"
-  };
-  
-  
-  
-  
-  
+  "01d": "images/Weather-icon/weather-icons-master/svg/wi-day-sunny.svg",
+  "01n": "images/Weather-icon/weather-icons-master/svg/wi-night-clear.svg",
+  "02d": "images/Weather-icon/weather-icons-master/svg/wi-day-cloudy.svg",
+  "02n": "images/Weather-icon/weather-icons-master/svg/wi-night-alt-cloudy.svg",
+  "03d": "images/Weather-icon/weather-icons-master/svg/wi-cloud.svg",
+  "03n": "images/Weather-icon/weather-icons-master/svg/wi-cloud.svg",
+  "04d": "images/Weather-icon/weather-icons-master/svg/wi-cloudy.svg",
+  "04n": "images/Weather-icon/weather-icons-master/svg/wi-cloudy.svg",
+  "09d": "images/Weather-icon/weather-icons-master/svg/wi-showers.svg",
+  "09n": "images/Weather-icon/weather-icons-master/svg/wi-showers.svg",
+  "10d": "images/Weather-icon/weather-icons-master/svg/wi-day-rain.svg",
+  "10n": "images/Weather-icon/weather-icons-master/svg/wi-night-alt-rain.svg",
+  "11d": "images/Weather-icon/weather-icons-master/svg/wi-thunderstorm.svg",
+  "11n": "images/Weather-icon/weather-icons-master/svg/wi-thunderstorm.svg",
+  "13d": "images/Weather-icon/weather-icons-master/svg/wi-snow.svg",
+  "13n": "images/Weather-icon/weather-icons-master/svg/wi-snow.svg",
+  "50d": "images/Weather-icon/weather-icons-master/svg/wi-fog.svg",
+  "50n": "images/Weather-icon/weather-icons-master/svg/wi-fog.svg"
+};
+
   
 
 const currentCity = document.getElementById("city");
@@ -54,7 +50,7 @@ async function fetchCurrentWeather(city) {
     currentDesc.textContent = data.weather[0].description;
     currentHumid.textContent = `Humidity: ${data.main.humidity}%`;
     currentWind.textContent = `Wind: ${data.wind.speed} km/h`;
-    currentMinMax.textContent = `Min/Max: ${data.main.temp_min}°C / ${data.main.temp_max}°C`;
+    currentMinMax.textContent = `Min: ${data.main.temp_min}°C Max: ${data.main.temp_max}°C`;
     const iconCode = data.weather[0].icon;
     const iconUrl = iconMapping[iconCode] || `https://openweathermap.org/img/wn/${iconCode}.png`;
     currentIcon.src = iconUrl;

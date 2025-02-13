@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Weather App</title>
+  <link href="https://cdn.jsdelivr.net/npm/weather-icons@1.3.2/css/weather-icons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -21,7 +22,7 @@
       <div class="weather-main">
         <div class="left">
           <div class="temp-group">
-            <img id="temp-icon" src="" alt="Weather Icon" class="temp-icon">
+            <i id="temp-icon" class="wi"></i>
             <div class="temperature" id="temperature-c">--°C</div>
           </div>
           <div class="condition" id="weather-c">--</div>
@@ -37,7 +38,7 @@
           </div>
           <div class="info-line">
             <img src="https://img.icons8.com/ios-filled/50/ffffff/thermometer.png" alt="Min Temp" class="info-icon">
-            <span id="min-max">Min/Max: --°C / --°C</span>
+            <span id="min-max">Min: --°C /Max: --°C</span>
           </div>
         </div>
       </div>
