@@ -295,7 +295,7 @@ body {
     padding: 15px;
   }
   .weather-forecast-item {
-    min-width: 180px;
+    min-width: 200px;
     font-size: 14px;
   }
 }
